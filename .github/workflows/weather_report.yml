@@ -26,7 +26,7 @@ jobs:
           architecture: x64
 
     - name: Run my code
-      run: java -jar weather_report.jar
+      run: java -jar java.jar
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
