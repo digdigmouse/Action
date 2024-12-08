@@ -26,7 +26,7 @@ jobs:
           architecture: x64
 
     - name: Run my code
-      run: java -jar java.jar
+      run: java -jar java.jar APPID APP_SECRET TOUSER TEMPLATE_ID
       env:
          APP_ID: ${{ secrets.APPID }}
          APP_SECRET: ${{ secrets.APPSECRET }}
