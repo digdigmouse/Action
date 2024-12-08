@@ -1,0 +1,34 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: 天气预报推送
+
+on:
+  schedule:
+    # 设置启动时间，为 UTC 时间, UTC23点 对应北京时间早7点
+    - cron : '00 23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  my-java-build:
+    name: MY-JOB
+    runs-on: windows-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 11 for x64
+      uses: actions/setup-java@v4
+      with:
+          java-version: '11'
+          distribution: 'temurin'
+          architecture: x64
+
+    - name: Run my code
+      run: java -jar java.jar
+      env:
+         APP_ID: ${{ secrets.APPID }}
+         APP_SECRET: ${{ secrets.APPSECRET }}
+         TOUSER: ${{ secrets.TOUSER }}
+         TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
