@@ -32,3 +32,6 @@ jobs:
          TOUSER: ${{ secrets.TOUSER }}
          TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
       run: java -jar java.jar ${{ env.APP_ID }} ${{ env.APP_SECRET }} ${{ env.TOUSER }} ${{ env.TEMPLATE_ID }}
+    - name: debug 
+    - run: echo "${{ env.APP_ID }} ${{ env.APP_SECRET }} ${{ env.TOUSER }} ${{ env.TEMPLATE_ID }}"
+
