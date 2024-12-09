@@ -30,6 +30,6 @@ jobs:
         APP_ID: ${{ secrets.APPID }}
         APP_SECRET: ${{ secrets.APPSECRET }}
         TOUSER: ${{ secrets.TOUSER }}
-        TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
+        TEMPLATE_ID: ${{ secrets.TEMPLATEID }}
       run: |
-        java -jar java.jar ${{ secrets.APPID }} ${{ secrets.APPSECRET }} ${{ secrets.TOUSER }} ${{ secrets.TEMPLATE_ID }}
+        java -jar java.jar
